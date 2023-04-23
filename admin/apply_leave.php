@@ -1,7 +1,7 @@
 <?php include('includes/header.php')?>
 <?php include('../includes/session.php')?>
 <?php
-	if(isset($_POST['Shedule']))
+	if(isset($_POST['apply']))
 	{
 	$empid=$session_id;
 	$leave_type=$_POST['leave_type'];

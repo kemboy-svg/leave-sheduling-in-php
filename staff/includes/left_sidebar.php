@@ -35,11 +35,11 @@
 					</li>
 					<li>
 						<a href="https://mmu.ac.ke/" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-edit-2"></span><span class="mtext">Visit Us</span>
+							<span class="micon dw dw-edit-2"></span><span class="mtext">Visit</span>
 						</a>
 					</li>
 					<li>
-						<a href="https://mmu.ac.ke/ict" class="dropdown-toggle no-arrow">
+						<a href="https://mmu.ac.ke/" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-paper-plane1"></span>
 							<span class="mtext">Faculty </span>
 						</a>

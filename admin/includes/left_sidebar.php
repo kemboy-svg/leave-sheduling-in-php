@@ -56,7 +56,7 @@
 						<div class="sidebar-small-cap">Extra</div>
 					</li>
 					<li>
-						<a href="https://mmust.ac.ke/" class="dropdown-toggle no-arrow">
+						<a href="https://mmu.ac.ke/" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-edit-2"></span><span class="mtext">Visit Us</span>
 						</a>
 					</li>

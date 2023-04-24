@@ -33,24 +33,25 @@
 		$diff =  date_diff($DF , $DT );
 		$num_days = (1 + $diff->format("%a"));
 
-		$sql="INSERT INTO tblleaves(firstname,lastname,email,LeaveType,ToDate,FromDate,Description,Status,IsRead,empid,num_days,PostingDate) VALUES(:leave_type,:fromdate,:todate,:description,:status,:isread,:empid,:num_days,:datePosting)";
-		$query = $dbh->prepare($sql);
+		$sql = "INSERT INTO tblleaves(firstname, lastname, email, LeaveType, FromDate, ToDate, Description, Status, IsRead, empid, num_days, PostingDate)
+        VALUES(:fname, :lname, :email, :leave_type, :fromdate, :todate, :description, :status, :isread, :empid, :num_days, :datePosting)";
+$query = $dbh->prepare($sql);
 
-		$query->bindParam(':firstname',$fname,PDO::PARAM_STR);
-		$query->bindParam(':lastname',$lname,PDO::PARAM_STR);
-		$query->bindParam(':email',$email,PDO::PARAM_STR);
-		$query->bindParam(':leave_type',$leave_type,PDO::PARAM_STR);
-		$query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
-		$query->bindParam(':todate',$todate,PDO::PARAM_STR);
-		$query->bindParam(':description',$description,PDO::PARAM_STR);
-		$query->bindParam(':status',$status,PDO::PARAM_STR);
-		$query->bindParam(':isread',$isread,PDO::PARAM_STR);
-		$query->bindParam(':empid',$empid,PDO::PARAM_STR);
+$query->bindParam(':firstname', $fname, PDO::PARAM_STR);
+$query->bindParam(':lastname', $lname, PDO::PARAM_STR);
+$query->bindParam(':email', $email, PDO::PARAM_STR);
+$query->bindParam(':leave_type', $leave_type, PDO::PARAM_STR);
+$query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
+$query->bindParam(':todate', $todate, PDO::PARAM_STR);
+$query->bindParam(':description', $description, PDO::PARAM_STR);
+$query->bindParam(':status', $status, PDO::PARAM_STR);
+$query->bindParam(':isread', $isread, PDO::PARAM_STR);
+$query->bindParam(':empid', $empid, PDO::PARAM_STR);
+$query->bindParam(':num_days', $num_days, PDO::PARAM_STR);
+$query->bindParam(':datePosting', $datePosting, PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $dbh->lastInsertId();
 
-		$query->bindParam(':num_days',$num_days,PDO::PARAM_STR);
-		$query->bindParam(':datePosting',$datePosting,PDO::PARAM_STR);
-		$query->execute();
-		$lastInsertId = $dbh->lastInsertId();
 		if($lastInsertId)
 		{
 			echo "<script>alert('Leave Scheduling was was successful.');</script>";
